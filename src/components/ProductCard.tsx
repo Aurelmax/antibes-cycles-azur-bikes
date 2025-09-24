@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface Product {
   id: number;
   name: string;
@@ -37,12 +39,12 @@ export default function ProductCard({ product }: ProductCardProps) {
             <span className={`text-sm px-2 py-1 rounded ${product.available ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
               {product.available ? 'Disponible' : 'Indisponible'}
             </span>
-            <button
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-400"
-              disabled={!product.available}
+            <Link
+              href={`/produit/${product.id}`}
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-400 inline-block text-center"
             >
               Détails
-            </button>
+            </Link>
           </div>
         </div>
       </div>

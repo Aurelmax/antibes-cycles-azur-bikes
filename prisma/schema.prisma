@@ -15,13 +15,22 @@ model Category {
 }
 
 model Product {
-  id          Int      @id @default(autoincrement())
-  name        String
-  description String?
-  price       Float
-  imageUrl    String
-  available   Boolean  @default(true)
-  categoryId  Int
-  category    Category @relation(fields: [categoryId], references: [id])
-  createdAt   DateTime @default(now())
+  id             Int             @id @default(autoincrement())
+  name           String
+  description    String?
+  price          Float
+  imageUrl       String
+  available      Boolean         @default(true)
+  categoryId     Int
+  category       Category        @relation(fields: [categoryId], references: [id])
+  specifications Specification[] // relation one-to-many
+  createdAt      DateTime        @default(now())
+}
+
+model Specification {
+  id        Int     @id @default(autoincrement())
+  key       String  // ex : "Cadre", "Fourche", "Poids"
+  value     String  // ex : "Aluminium aéronautique"
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
 }
