@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PaymentBanner from './PaymentBanner';
 
 interface Product {
   id: number;
@@ -33,18 +34,21 @@ export default function ProductCard({ product }: ProductCardProps) {
         {product.description && (
           <p className="text-sm text-gray-500 mb-2 line-clamp-2">{product.description}</p>
         )}
-        <div className="flex justify-between items-center">
-          <span className="text-xl font-bold text-blue-600">{product.price}€</span>
-          <div className="flex items-center space-x-2">
-            <span className={`text-sm px-2 py-1 rounded ${product.available ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-              {product.available ? 'Disponible' : 'Indisponible'}
-            </span>
-            <Link
-              href={`/produit/${product.id}`}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-400 inline-block text-center"
-            >
-              Détails
-            </Link>
+        <div className="space-y-3">
+          <PaymentBanner variant="compact" />
+          <div className="flex justify-between items-center">
+            <span className="text-xl font-bold text-blue-600">{product.price}€</span>
+            <div className="flex items-center space-x-2">
+              <span className={`text-sm px-2 py-1 rounded ${product.available ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                {product.available ? 'Disponible' : 'Indisponible'}
+              </span>
+              <Link
+                href={`/produit/${product.id}`}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-400 inline-block text-center"
+              >
+                Détails
+              </Link>
+            </div>
           </div>
         </div>
       </div>

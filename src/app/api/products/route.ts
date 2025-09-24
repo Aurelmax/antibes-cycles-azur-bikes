@@ -7,8 +7,12 @@ export async function GET(request: NextRequest) {
   try {
     const url = new URL(request.url)
     const includeSpecs = url.searchParams.get('specs') === 'true'
+    const categoryId = url.searchParams.get('categoryId')
+
+    const where = categoryId ? { categoryId: parseInt(categoryId) } : {}
 
     const products = await prisma.product.findMany({
+      where,
       include: {
         category: {
           select: {

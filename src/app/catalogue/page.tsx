@@ -2,34 +2,70 @@
 
 import { useEffect, useState } from 'react';
 import ProductCard, { Product } from '@/components/ProductCard';
+import PaymentBanner from '@/components/PaymentBanner';
+
+interface Category {
+  id: number;
+  name: string;
+  description?: string;
+}
+
+interface Filter {
+  label: string;
+  value: string;
+}
+
+const filters: Filter[] = [
+  { label: "Tous", value: "all" },
+  { label: "VTT électrique", value: "VTT électrique" },
+  { label: "Urbain électrique", value: "Urbain électrique" },
+  { label: "Trekking électrique", value: "Trekking électrique" },
+];
 
 export default function CataloguePage() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchProducts() {
+    async function fetchData() {
       try {
         setLoading(true);
-        const res = await fetch('/api/products');
 
-        if (!res.ok) {
+        // Charger les produits et catégories en parallèle
+        const [productsRes, categoriesRes] = await Promise.all([
+          fetch('/api/products'),
+          fetch('/api/categories')
+        ]);
+
+        if (!productsRes.ok) {
           throw new Error('Failed to fetch products');
         }
 
-        const data = await res.json();
-        setProducts(data);
+        const productsData = await productsRes.json();
+        setProducts(productsData);
+
+        if (categoriesRes.ok) {
+          const categoriesData = await categoriesRes.json();
+          setCategories(categoriesData);
+        }
       } catch (error) {
-        console.error('Error fetching products:', error);
-        setError('Erreur lors du chargement des produits');
+        console.error('Error fetching data:', error);
+        setError('Erreur lors du chargement des données');
       } finally {
         setLoading(false);
       }
     }
 
-    fetchProducts();
+    fetchData();
   }, []);
+
+  // Filtrage côté client
+  const filteredProducts = selectedCategory === "all"
+    ? products
+    : products.filter(p => p.category.name === selectedCategory);
 
   if (loading) {
     return (
@@ -61,30 +97,32 @@ export default function CataloguePage() {
     <div className="py-8">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">Notre catalogue</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
           Découvrez notre sélection de vélos électriques Moustache, conçus pour tous vos besoins
         </p>
+        <PaymentBanner className="max-w-4xl mx-auto" />
       </div>
 
       <div className="mb-8">
         <div className="flex flex-wrap justify-center gap-4">
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-            Tous
-          </button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
-            VTT électrique
-          </button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
-            Urbain électrique
-          </button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
-            Trekking électrique
-          </button>
+          {filters.map((filter) => (
+            <button
+              key={filter.value}
+              onClick={() => setSelectedCategory(filter.value)}
+              className={`px-4 py-2 rounded-lg transition-colors ${
+                selectedCategory === filter.value
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
