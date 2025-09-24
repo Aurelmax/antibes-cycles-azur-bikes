@@ -11,12 +11,19 @@ export default function PaymentBanner({ variant = 'default', className = '' }: P
 
   if (variant === 'compact') {
     return (
-      <div className={`bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white px-4 py-2 rounded-lg border border-gray-700 shadow-lg ${className}`}>
-        <div className="flex items-center justify-center space-x-2 text-sm font-medium">
-          <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-          </svg>
-          <span>Paiement 4x sans frais</span>
+      <div className={`relative overflow-hidden bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white px-6 py-3 rounded-xl border border-gray-700 shadow-2xl ${className}`}>
+        {/* Effet shimmer */}
+        <div className="absolute inset-0 shimmer opacity-50" />
+
+        <div className="relative flex items-center justify-center space-x-3 text-sm font-medium">
+          <div className="animate-float">
+            <svg className="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+            </svg>
+          </div>
+          <span className="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent font-bold">
+            💳 Paiement 4x sans frais
+          </span>
         </div>
       </div>
     );
