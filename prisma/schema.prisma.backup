@@ -1,0 +1,78 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  products    Product[]
+}
+
+model Product {
+  id            Int              @id @default(autoincrement())
+  name          String
+  description   String?
+  price         Float
+  warranty      String?
+  weight        Float?
+  size          String?
+  stock         Int              @default(0)
+  category      Category         @relation(fields: [categoryId], references: [id])
+  categoryId    Int
+  specifications Specification[]
+  motorization   Motorization[]
+  options        Option[]
+  images         Image[]
+}
+
+model Specification {
+  id         Int      @id @default(autoincrement())
+  product    Product  @relation(fields: [productId], references: [id])
+  productId  Int
+  frame      String?
+  fork       String?
+  brakes     String?
+  gears      String?
+  derailleur String?
+  wheel      String?
+  tires      String?
+  saddle     String?
+  seatpost   String?
+  lighting   String?
+}
+
+model Motorization {
+  id              Int     @id @default(autoincrement())
+  product         Product @relation(fields: [productId], references: [id])
+  productId       Int
+  motorBrand      String?
+  motorPower      String?
+  batteryType     String?
+  batteryVoltage  Int?
+  batteryCapacity String?
+  autonomyKm      String?
+  maxSpeedKmh     Int?
+  batteryWarranty String?
+}
+
+model Option {
+  id         Int      @id @default(autoincrement())
+  product    Product  @relation(fields: [productId], references: [id])
+  productId  Int
+  optionName String
+  available  Boolean  @default(false)
+}
+
+model Image {
+  id        Int     @id @default(autoincrement())
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  url       String
+  altText   String?
+}
