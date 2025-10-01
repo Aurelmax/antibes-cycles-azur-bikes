@@ -85,11 +85,52 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12">
-            {/* Samedi 28 Trail */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Samedi 28.1 */}
             <div className="bg-card-bg border border-border-color rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover-glow">
-              <div className="aspect-w-4 aspect-h-3 bg-gradient-to-br from-secondary-black to-card-bg flex items-center justify-center">
-                <div className="text-6xl text-accent-gold">🚵‍♂️</div>
+              <div className="relative aspect-video bg-gradient-to-br from-accent-gold/10 to-accent-gold/5 overflow-hidden">
+                <img 
+                  src="/images/bikes/samedi-28/samedi-28-1-black.jpg" 
+                  alt="Samedi 28.1 - Noir"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute top-4 left-4 bg-accent-gold text-primary-black px-3 py-1 rounded-full text-sm font-bold">
+                  NOUVEAU
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="bg-accent-gold text-primary-black text-xs font-bold px-3 py-1 rounded-full tracking-wide">ENTRÉE DE GAMME</span>
+                  <div className="flex text-accent-gold">
+                    ★★★★☆
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">SAMEDI 28.1</h3>
+                <p className="text-accent-silver text-sm mb-4">Vélo électrique urbain parfait pour débuter</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-accent-gold">1 999€</span>
+                  <Link href="/produit/samedi-28-1" className="bg-accent-gold text-primary-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-white hover:text-primary-black transition-all duration-300 tracking-wide">
+                    VOIR DÉTAILS
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Samedi 28.2 */}
+            <div className="bg-card-bg border border-accent-gold rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover-glow relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-accent-gold text-primary-black px-4 py-2 rounded-full text-sm font-bold">
+                  ⭐ POPULAIRE
+                </span>
+              </div>
+              <div className="relative aspect-video bg-gradient-to-br from-accent-gold/10 to-accent-gold/5 overflow-hidden">
+                <img 
+                  src="/images/bikes/samedi-28/samedi-28-2.jpg" 
+                  alt="Samedi 28.2 - Ambre"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
@@ -98,10 +139,10 @@ export default function HomePage() {
                     ★★★★★
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">Samedi 28 Trail</h3>
-                <p className="text-accent-silver text-sm mb-4">VTT électrique polyvalent pour tous les terrains</p>
+                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">SAMEDI 28.2</h3>
+                <p className="text-accent-silver text-sm mb-4">Le choix parfait entre performance et prix</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-accent-gold">4 299€</span>
+                  <span className="text-2xl font-bold text-accent-gold">2 799€</span>
                   <Link href="/catalogue" className="bg-accent-gold text-primary-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-white hover:text-primary-black transition-all duration-300 tracking-wide">
                     VOIR DÉTAILS
                   </Link>
@@ -109,69 +150,31 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Friday 28.3 */}
+            {/* Samedi 28.4 */}
             <div className="bg-card-bg border border-border-color rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover-glow">
-              <div className="aspect-w-4 aspect-h-3 bg-gradient-to-br from-secondary-black to-primary-black flex items-center justify-center border-b border-accent-gold">
-                <div className="text-6xl text-accent-gold">🚲</div>
+              <div className="relative aspect-video bg-gradient-to-br from-accent-gold/10 to-accent-gold/5 overflow-hidden">
+                <img 
+                  src="/images/bikes/samedi-28/samedi-28-4.jpg" 
+                  alt="Samedi 28.4 - Rouge Premium"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute top-4 left-4 bg-accent-gold text-primary-black px-3 py-1 rounded-full text-sm font-bold">
+                  PREMIUM
+                </div>
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="bg-accent-gold text-primary-black text-xs font-bold px-3 py-1 rounded-full tracking-wide">URBAIN</span>
+                  <span className="bg-accent-gold text-primary-black text-xs font-bold px-3 py-1 rounded-full tracking-wide">HAUT DE GAMME</span>
                   <div className="flex text-accent-gold">
                     ★★★★★
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">FRIDAY 28.3</h3>
-                <p className="text-accent-silver text-sm mb-4">Vélo urbain électrique design et confortable</p>
+                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">SAMEDI 28.4</h3>
+                <p className="text-accent-silver text-sm mb-4">La référence absolue en vélo électrique urbain</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-accent-gold">3 799€</span>
-                  <Link href="/catalogue" className="bg-accent-gold text-primary-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-white hover:text-primary-black transition-all duration-300 hover-glow tracking-wide">
-                    VOIR DÉTAILS
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Lundi 28.3 */}
-            <div className="bg-card-bg border border-border-color rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover-glow">
-              <div className="aspect-w-4 aspect-h-3 bg-gradient-to-br from-secondary-black to-primary-black flex items-center justify-center border-b border-accent-gold">
-                <div className="text-6xl text-accent-gold">🚴‍♀️</div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="bg-accent-gold text-primary-black text-xs font-bold px-3 py-1 rounded-full tracking-wide">TREKKING</span>
-                  <div className="flex text-accent-gold">
-                    ★★★★☆
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">LUNDI 28.3</h3>
-                <p className="text-accent-silver text-sm mb-4">Vélo trekking pour vos longues aventures</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-accent-gold">3 599€</span>
-                  <Link href="/catalogue" className="bg-accent-gold text-primary-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-white hover:text-primary-black transition-all duration-300 hover-glow tracking-wide">
-                    VOIR DÉTAILS
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Cargo Game */}
-            <div className="bg-card-bg border border-border-color rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover-glow">
-              <div className="aspect-w-4 aspect-h-3 bg-gradient-to-br from-secondary-black to-primary-black flex items-center justify-center border-b border-accent-gold">
-                <div className="text-6xl text-accent-gold">📦</div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="bg-accent-gold text-primary-black text-xs font-bold px-3 py-1 rounded-full tracking-wide">CARGO</span>
-                  <div className="flex text-accent-gold">
-                    ★★★★★
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">CARGO GAME</h3>
-                <p className="text-accent-silver text-sm mb-4">Vélo cargo électrique pour toute la famille</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-accent-gold">5 299€</span>
-                  <Link href="/catalogue" className="bg-accent-gold text-primary-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-white hover:text-primary-black transition-all duration-300 hover-glow tracking-wide">
+                  <span className="text-2xl font-bold text-accent-gold">3 399€</span>
+                  <Link href="/catalogue" className="bg-accent-gold text-primary-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-white hover:text-primary-black transition-all duration-300 tracking-wide">
                     VOIR DÉTAILS
                   </Link>
                 </div>

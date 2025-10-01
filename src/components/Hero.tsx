@@ -20,7 +20,7 @@ export default function Hero({
   className = ''
 }: HeroProps) {
   return (
-    <section className={`relative min-h-[60vh] flex items-center justify-center overflow-hidden ${className}`}>
+    <section className={`relative aspect-video flex items-center justify-center overflow-hidden ${className}`}>
       {/* Image de fond avec overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

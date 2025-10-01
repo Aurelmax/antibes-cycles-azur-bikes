@@ -1,6 +1,8 @@
 // src/app/layout.tsx
 import './globals.css'
 import Link from 'next/link'
+import { CartProvider } from '@/contexts/CartContext'
+import CartButton from '@/components/CartButton'
 
 export const metadata = {
   title: 'Moustache Bikes Antibes',
@@ -11,6 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body className="flex flex-col min-h-screen">
+        <CartProvider>
         <header className="bg-primary-black text-white shadow-2xl border-b border-accent-gold">
           <div className="container mx-auto px-4 py-6">
             <div className="flex justify-between items-center">
@@ -19,17 +22,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <span className="text-accent-gold">MOUSTACHE</span> BIKES
                 </Link>
               </h1>
-              <nav className="hidden md:flex space-x-8">
-                <Link href="/" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">ACCUEIL</Link>
-                <Link href="/catalogue" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">CATALOGUE</Link>
-                <Link href="/location" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">LOCATION</Link>
-                <Link href="/atelier" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">ATELIER</Link>
-                <Link href="/blog" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">BLOG</Link>
-                <Link href="/apropos" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">À PROPOS</Link>
-                <Link href="/contact" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">CONTACT</Link>
-              </nav>
-              <div className="md:hidden">
-                <button className="text-white hover:text-accent-gold transition-colors text-2xl">☰</button>
+              <div className="flex items-center space-x-6">
+                <nav className="hidden md:flex space-x-8">
+                  <Link href="/" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">ACCUEIL</Link>
+                  <Link href="/catalogue" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">CATALOGUE</Link>
+                  <Link href="/location" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">LOCATION</Link>
+                  <Link href="/atelier" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">ATELIER</Link>
+                  <Link href="/blog" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">BLOG</Link>
+                  <Link href="/apropos" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">À PROPOS</Link>
+                  <Link href="/contact" className="hover:text-accent-gold transition-all duration-300 font-medium tracking-wide">CONTACT</Link>
+                </nav>
+                <CartButton />
+                <div className="md:hidden">
+                  <button className="text-white hover:text-accent-gold transition-colors text-2xl">☰</button>
+                </div>
               </div>
             </div>
           </div>
@@ -141,6 +147,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
       </footer>
+        </CartProvider>
       </body>
     </html>
   )

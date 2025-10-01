@@ -53,7 +53,7 @@ export default function HeroCarousel({ slides, className = '' }: HeroCarouselPro
   };
 
   return (
-    <section className={`relative h-[56.25vw] max-h-[80vh] min-h-[500px] flex items-center justify-center text-center overflow-hidden ${className}`}>
+    <section className={`relative aspect-video flex items-center justify-center text-center overflow-hidden ${className}`}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
