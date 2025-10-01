@@ -5,8 +5,8 @@ import { CartProvider } from '@/contexts/CartContext'
 import CartButton from '@/components/CartButton'
 
 export const metadata = {
-  title: 'Moustache Bikes Antibes',
-  description: 'Vente, location et atelier de vélos électriques Moustache à Antibes',
+  title: 'Antibe Cycles AZUR Antibes',
+  description: 'Vente, location et atelier de vélos électriques haut de gamme à Antibes',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex justify-between items-center">
               <h1 className="text-3xl font-bold tracking-wide">
                 <Link href="/" className="hover:text-accent-gold transition-all duration-300 hover-glow">
-                  <span className="text-accent-gold">MOUSTACHE</span> BIKES
+                  <span className="text-accent-gold">ANTIBE CYCLES AZUR</span> BIKES
                 </Link>
               </h1>
               <div className="flex items-center space-x-6">
@@ -41,6 +41,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
 
+        {/* Bannière de développement */}
+        <div className="bg-gradient-to-r from-accent-gold to-yellow-400 text-primary-black py-2 px-4 text-center">
+          <div className="container mx-auto">
+            <p className="text-sm font-semibold tracking-wide">
+              🚧 MAQUETTE DE DÉMONSTRATION - Développée par 
+              <span className="font-bold"> Aurélien LAVAYSSIERE</span> de <span className="font-bold">GestionMax</span> à Antibes
+            </p>
+          </div>
+        </div>
+
         <main className="flex-grow container mx-auto p-6">
           {children}
         </main>
@@ -52,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* Company Info */}
             <div>
               <h3 className="text-2xl font-bold mb-4 text-accent-gold tracking-wide">
-                <span className="text-accent-gold">MOUSTACHE</span> BIKES
+                <span className="text-accent-gold">ANTIBE CYCLES AZUR</span> BIKES
               </h3>
               <p className="text-accent-silver mb-4 leading-relaxed">
                 Spécialiste des vélos électriques haut de gamme à Antibes.
@@ -121,8 +131,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </div>
                 <div className="flex items-center">
                   <span className="text-accent-gold mr-3">✉️</span>
-                  <a href="mailto:contact@moustachebike-antibes.fr" className="text-accent-silver hover:text-accent-gold transition-colors">
-                    contact@moustachebike-antibes.fr
+                  <a href="mailto:contact@antibe-cycles-azur.fr" className="text-accent-silver hover:text-accent-gold transition-colors">
+                    contact@antibe-cycles-azur.fr
                   </a>
                 </div>
               </div>
@@ -133,7 +143,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="border-t border-border-color pt-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-accent-silver text-sm">
-                © 2025 <span className="text-accent-gold font-semibold">MOUSTACHE BIKES</span> Antibes · Tous droits réservés
+                © 2025 <span className="text-accent-gold font-semibold">ANTIBE CYCLES AZUR BIKES</span> Antibes · Tous droits réservés
               </p>
               <div className="flex space-x-6 text-sm">
                 <Link href="/mentions-legales" className="text-accent-silver hover:text-accent-gold transition-colors">

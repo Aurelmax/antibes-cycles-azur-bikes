@@ -97,7 +97,7 @@ export default function CheckoutSuccessPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-white">Email</div>
-                    <div className="text-accent-silver text-sm">contact@moustachebike-antibes.fr</div>
+                    <div className="text-accent-silver text-sm">contact@antibe-cycles-azur.fr</div>
                   </div>
                 </div>
                 

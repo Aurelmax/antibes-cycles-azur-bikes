@@ -187,7 +187,7 @@ export default function AtelierPage() {
               <div className="text-4xl mb-4 text-accent-gold">📍</div>
               <h3 className="text-xl font-bold text-white mb-2 tracking-wide">ADRESSE</h3>
               <p className="text-accent-silver">
-                Atelier Moustache Bikes<br />
+                Atelier Antibe Cycles AZUR<br />
                 Antibes, France
               </p>
             </div>

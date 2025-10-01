@@ -564,7 +564,7 @@ export default function LocationPage() {
               </div>
               <div className="flex items-center">
                 <span className="text-2xl mr-2">📧</span>
-                <span>contact@moustachebike-antibes.fr</span>
+                <span>contact@antibe-cycles-azur.fr</span>
               </div>
             </div>
           </div>

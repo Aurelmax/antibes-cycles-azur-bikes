@@ -17,7 +17,7 @@ export default function AproposPage() {
             <h2 className="text-4xl font-bold text-center mb-12 text-white tracking-wide">NOTRE HISTOIRE</h2>
             <div className="max-w-4xl mx-auto text-accent-silver leading-relaxed text-lg">
               <p className="mb-6">
-                Née de la passion pour l'électromobilité et l'amour du cyclisme, Moustache Bikes Antibes
+                Née de la passion pour l'électromobilité et l'amour du cyclisme, Antibe Cycles AZUR Antibes
                 a vu le jour en 2020 avec une vision claire : démocratiser l'usage du vélo électrique
                 haut de gamme sur la Côte d'Azur.
               </p>
@@ -66,7 +66,7 @@ export default function AproposPage() {
         </div>
 
         <div className="mb-20">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white tracking-wide">POURQUOI MOUSTACHE BIKES ?</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-white tracking-wide">POURQUOI ANTIBE CYCLES AZUR BIKES ?</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-card-bg border border-border-color rounded-xl p-8">
               <h3 className="text-2xl font-bold text-white mb-6 tracking-wide">EXPERTISE TECHNIQUE</h3>

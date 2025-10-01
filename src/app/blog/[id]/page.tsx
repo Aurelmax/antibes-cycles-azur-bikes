@@ -23,7 +23,7 @@ const blogPosts = [
       <p>L'assistance électrique permet de parcourir de plus longues distances sans effort excessif. Idéal pour les trajets domicile-travail ou les balades du weekend.</p>
       
       <h2>Notre conseil</h2>
-      <p>Chez Moustache Bikes, nous vous accompagnons dans le choix de votre vélo électrique selon vos besoins et votre budget. N'hésitez pas à nous rendre visite pour un essai !</p>
+      <p>Chez Antibe Cycles AZUR, nous vous accompagnons dans le choix de votre vélo électrique selon vos besoins et votre budget. N'hésitez pas à nous rendre visite pour un essai !</p>
     `,
     author: "Équipe Moustache",
     date: "2025-01-15",
@@ -109,7 +109,7 @@ const blogPosts = [
       <p>Le moteur peut être situé dans la roue avant, arrière ou au niveau du pédalier. Chaque position a ses avantages.</p>
       
       <h2>Notre service</h2>
-      <p>Chez Moustache Bikes, nous vous proposons des essais gratuits pour vous aider à faire le bon choix. Venez nous rendre visite !</p>
+      <p>Chez Antibe Cycles AZUR, nous vous proposons des essais gratuits pour vous aider à faire le bon choix. Venez nous rendre visite !</p>
     `,
     author: "Conseiller Moustache",
     date: "2024-12-28",

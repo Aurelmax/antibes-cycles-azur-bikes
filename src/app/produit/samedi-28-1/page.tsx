@@ -1,15 +1,25 @@
 import Hero from '@/components/Hero';
 import Link from 'next/link';
 import AddToCartButton from '@/components/AddToCartButton';
+import ProductCarousel from '@/components/ProductCarousel';
 import { Product } from '@/types/cart';
 
 export default function Samedi281Page() {
+  // Images du carousel
+  const productImages = [
+    '/images/bikes/samedi-28/samedi-28-1-open-f-1900x1425.jpg',
+    '/images/bikes/samedi-28/samedi-28-1-black.jpg',
+    '/images/bikes/samedi-28/samedi-28-1-open-details-3-1900x1267.jpg',
+    '/images/bikes/samedi-28/samedi-28-1-open-details-4-1900x1267.jpg',
+    '/images/bikes/samedi-28/samedi-28-1-open-s-zoom-fork-1900x1425.jpg'
+  ];
+
   // Données du produit Samedi 28.1
   const product: Product = {
     id: 'samedi-28-1',
     name: 'Samedi 28.1',
     price: 1999,
-    image: '/images/bikes/samedi-28/samedi-28-1-black.jpg',
+    image: '/images/bikes/samedi-28/samedi-28-1-open-f-1900x1425.jpg',
     category: 'Vélo électrique urbain',
     description: 'Vélo électrique urbain parfait pour débuter avec tous les éléments clés pour partir en balade ou se rendre au bureau.',
     specifications: {
@@ -27,7 +37,7 @@ export default function Samedi281Page() {
         subtitle="Vélo électrique urbain haut de gamme"
         buttonText="ESSAYER EN MAGASIN"
         buttonLink="/contact"
-        backgroundImage="/images/bikes/samedi-28/samedi-28-1-black.jpg"
+        backgroundImage="/images/bikes/samedi-28/samedi-28-1-open-f-1900x1425.jpg"
       />
 
       {/* Section principale du produit */}
@@ -35,45 +45,12 @@ export default function Samedi281Page() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
-            {/* Image du produit */}
-            <div className="space-y-6">
-              <div className="relative aspect-square bg-card-bg border border-border-color rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src="/images/bikes/samedi-28/samedi-28-1-black.jpg" 
-                  alt="Samedi 28.1 - Noir"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4 bg-accent-gold text-primary-black px-3 py-1 rounded-full text-sm font-bold">
-                  NOUVEAU
-                </div>
-              </div>
-              
-              {/* Galerie d'images (placeholder pour futures images) */}
-              <div className="grid grid-cols-4 gap-4">
-                <div className="aspect-square bg-card-bg border border-border-color rounded-lg overflow-hidden cursor-pointer hover:border-accent-gold transition-colors">
-                  <img 
-                    src="/images/bikes/samedi-28/samedi-28-1-black.jpg" 
-                    alt="Vue 1"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-square bg-card-bg border border-border-color rounded-lg overflow-hidden cursor-pointer hover:border-accent-gold transition-colors">
-                  <div className="w-full h-full bg-gradient-to-br from-accent-gold/20 to-accent-gold/10 flex items-center justify-center">
-                    <span className="text-2xl">📸</span>
-                  </div>
-                </div>
-                <div className="aspect-square bg-card-bg border border-border-color rounded-lg overflow-hidden cursor-pointer hover:border-accent-gold transition-colors">
-                  <div className="w-full h-full bg-gradient-to-br from-accent-gold/20 to-accent-gold/10 flex items-center justify-center">
-                    <span className="text-2xl">📸</span>
-                  </div>
-                </div>
-                <div className="aspect-square bg-card-bg border border-border-color rounded-lg overflow-hidden cursor-pointer hover:border-accent-gold transition-colors">
-                  <div className="w-full h-full bg-gradient-to-br from-accent-gold/20 to-accent-gold/10 flex items-center justify-center">
-                    <span className="text-2xl">📸</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Carousel d'images du produit */}
+            <ProductCarousel 
+              images={productImages}
+              alt="Samedi 28.1"
+              className="w-full"
+            />
 
             {/* Informations du produit */}
             <div className="space-y-8">

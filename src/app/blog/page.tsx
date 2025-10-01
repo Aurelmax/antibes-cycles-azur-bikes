@@ -39,7 +39,7 @@ export default function BlogPage() {
   return (
     <div>
       <Hero 
-        title="BLOG MOUSTACHE"
+        title="BLOG ANTIBE CYCLES AZUR"
         subtitle="Découvrez nos conseils, actualités et guides pour profiter pleinement de votre vélo électrique haut de gamme"
         buttonText="DÉCOUVRIR"
         buttonLink="#articles"

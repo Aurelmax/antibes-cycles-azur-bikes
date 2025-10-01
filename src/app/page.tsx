@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import FaqAccordion, { defaultFaqItems } from '@/components/FaqAccordion';
 import HeroCarousel from '@/components/HeroCarousel';
+import MapboxMap from '@/components/MapboxMap';
 
 export default function HomePage() {
   const heroSlides = [
     {
       id: 1,
-      title: "MOUSTACHE BIKES",
+      title: "ANTIBE CYCLES AZUR BIKES",
       subtitle: "L'électromobilité haut de gamme à votre portée à Antibes",
       buttonText: "DÉCOUVRIR NOS VÉLOS",
       buttonLink: "/catalogue",
@@ -209,11 +210,11 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-            {/* Moustache Bikes - Marque principale */}
+            {/* Antibe Cycles AZUR - Marque principale */}
             <div className="flex items-center justify-center p-6 bg-card-bg border border-border-color rounded-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover-glow">
               <div className="text-center">
                 <div className="text-4xl mb-2 text-accent-gold">🚴</div>
-                <div className="font-bold text-white text-sm tracking-wide">MOUSTACHE</div>
+                <div className="font-bold text-white text-sm tracking-wide">ANTIBE CYCLES AZUR</div>
               </div>
             </div>
 
@@ -299,7 +300,7 @@ export default function HomePage() {
       <section className="bg-primary-black py-20 border-t border-accent-gold">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-12 text-white tracking-wide">
-            <span className="text-accent-gold">POURQUOI CHOISIR</span> MOUSTACHE BIKES ?
+            <span className="text-accent-gold">POURQUOI CHOISIR</span> ANTIBE CYCLES AZUR BIKES ?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex flex-col items-center p-6 bg-card-bg border border-border-color rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover-glow">
@@ -317,6 +318,76 @@ export default function HomePage() {
             <div className="flex flex-col items-center p-6 bg-card-bg border border-border-color rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover-glow">
               <div className="text-4xl mb-4 text-accent-gold">📍</div>
               <h3 className="font-bold text-white text-lg tracking-wide">LOCAL À ANTIBES</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Carte Interactive */}
+      <section className="py-20 bg-primary-black border-t border-accent-gold">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-6 tracking-wide">
+              <span className="text-accent-gold">DÉCOUVREZ</span> ANTIBES À VÉLO
+            </h2>
+            <p className="text-xl text-accent-silver max-w-3xl mx-auto leading-relaxed">
+              Explorez nos parcours recommandés et découvrez les plus beaux endroits d'Antibes et ses environs
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <MapboxMap className="mb-8" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-card-bg border border-border-color rounded-xl p-6 text-center hover:shadow-2xl transition-all duration-300 hover-glow">
+                <div className="text-4xl mb-4 text-accent-gold">🏛️</div>
+                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">TOUR DES REMPARTS</h3>
+                <p className="text-accent-silver text-sm mb-4">Découvrez l'histoire d'Antibes en 8km</p>
+                <div className="flex justify-center space-x-4 text-sm text-accent-gold">
+                  <span>⏱️ 45min</span>
+                  <span>📏 8km</span>
+                  <span>🟢 Facile</span>
+                </div>
+              </div>
+
+              <div className="bg-card-bg border border-accent-gold rounded-xl p-6 text-center hover:shadow-2xl transition-all duration-300 hover-glow relative">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-accent-gold text-primary-black px-3 py-1 rounded-full text-xs font-bold">
+                    ⭐ POPULAIRE
+                  </span>
+                </div>
+                <div className="text-4xl mb-4 text-accent-gold">🏖️</div>
+                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">CAP D'ANTIBES</h3>
+                <p className="text-accent-silver text-sm mb-4">Le sentier littoral en 15km</p>
+                <div className="flex justify-center space-x-4 text-sm text-accent-gold">
+                  <span>⏱️ 1h30</span>
+                  <span>📏 15km</span>
+                  <span>🔵 Modéré</span>
+                </div>
+              </div>
+
+              <div className="bg-card-bg border border-border-color rounded-xl p-6 text-center hover:shadow-2xl transition-all duration-300 hover-glow">
+                <div className="text-4xl mb-4 text-accent-gold">🏺</div>
+                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">BIOT & VALLAURIS</h3>
+                <p className="text-accent-silver text-sm mb-4">Villages perchés et ateliers d'art</p>
+                <div className="flex justify-center space-x-4 text-sm text-accent-gold">
+                  <span>⏱️ 2h30</span>
+                  <span>📏 25km</span>
+                  <span>🟣 Sportif</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Link 
+                href="/location"
+                className="inline-flex items-center bg-accent-gold text-primary-black px-8 py-4 rounded-xl text-lg font-bold tracking-wide hover:bg-white hover:text-primary-black transition-all duration-300 button-shimmer-intense button-pulse"
+              >
+                🚴‍♂️ RÉSERVER UN VÉLO
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

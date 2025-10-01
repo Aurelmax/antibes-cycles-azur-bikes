@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Réglage Postural Vélo de Course : Guide Complet 2025 | Moustache Bikes',
+  title: 'Réglage Postural Vélo de Course : Guide Complet 2025 | Antibe Cycles AZUR',
   description: 'Découvrez comment optimiser votre position sur vélo de course. Guide complet du réglage postural : selle, guidon, pédales. Conseils d\'experts à Antibes.',
   keywords: 'réglage postural vélo, position vélo course, réglage selle, position guidon, vélo course Antibes',
   openGraph: {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Découvrez comment optimiser votre position sur vélo de course. Guide complet du réglage postural : selle, guidon, pédales.',
     type: 'article',
     publishedTime: '2025-01-01T00:00:00.000Z',
-    authors: ['Moustache Bikes'],
+    authors: ['Antibe Cycles AZUR'],
   },
 };
 
@@ -29,7 +29,7 @@ export default function ReglagePosturalBlogPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <span>📅 Publié le 1er janvier 2025</span>
-              <span>👤 Par l'équipe Moustache Bikes</span>
+              <span>👤 Par l'équipe Antibe Cycles AZUR</span>
               <span>⏱️ 8 min de lecture</span>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function ReglagePosturalBlogPage() {
         {/* Section 6 */}
         <section id="conseils-experts" className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Conseils d'experts Moustache Bikes
+            Conseils d'experts Antibe Cycles AZUR
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -224,7 +224,7 @@ export default function ReglagePosturalBlogPage() {
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-4">Besoin d'un réglage professionnel ?</h3>
             <p className="text-blue-100 mb-6">
-              Nos experts Moustache Bikes à Antibes vous proposent un réglage postural complet 
+              Nos experts Antibe Cycles AZUR à Antibes vous proposent un réglage postural complet 
               avec analyse vidéo et ajustements précis.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -253,7 +253,7 @@ export default function ReglagePosturalBlogPage() {
             à des professionnels pour un réglage précis.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            Chez Moustache Bikes, nous mettons notre expertise à votre service pour vous 
+            Chez Antibe Cycles AZUR, nous mettons notre expertise à votre service pour vous 
             accompagner vers l'excellence cycliste.
           </p>
         </section>

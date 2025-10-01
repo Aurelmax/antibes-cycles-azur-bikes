@@ -23,7 +23,7 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold text-white tracking-wide">ADRESSE</h3>
                 </div>
                 <p className="text-accent-silver">
-                  Moustache Bikes Antibes<br />
+                  Antibe Cycles AZUR Antibes<br />
                   123 Avenue de la République<br />
                   06600 Antibes, France
                 </p>
@@ -47,8 +47,8 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold text-white tracking-wide">EMAIL</h3>
                 </div>
                 <p className="text-accent-silver">
-                  <a href="mailto:contact@moustachebike-antibes.fr" className="hover:text-accent-gold transition-colors">
-                    contact@moustachebike-antibes.fr
+                  <a href="mailto:contact@antibe-cycles-azur.fr" className="hover:text-accent-gold transition-colors">
+                    contact@antibe-cycles-azur.fr
                   </a>
                 </p>
               </div>
@@ -115,6 +115,7 @@ export default function ContactPage() {
                   <option value="info">Demande d'information</option>
                   <option value="location">Location de vélo</option>
                   <option value="achat">Achat de vélo</option>
+                  <option value="essai">Essai en magasin</option>
                   <option value="entretien">Entretien</option>
                   <option value="reglage-postural">Réglage postural</option>
                   <option value="autre">Autre</option>

@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Réglage Postural Vélo de Course | Service Professionnel | Moustache Bikes Antibes',
+  title: 'Réglage Postural Vélo de Course | Service Professionnel | Antibe Cycles AZUR Antibes',
   description: 'Service de réglage postural professionnel pour vélo de course à Antibes. Analyse vidéo, ajustements précis par nos experts certifiés. Prenez rendez-vous.',
-  keywords: 'réglage postural vélo course, service vélo Antibes, réglage professionnel, analyse posturale, Moustache Bikes',
+  keywords: 'réglage postural vélo course, service vélo Antibes, réglage professionnel, analyse posturale, Antibe Cycles AZUR',
   openGraph: {
     title: 'Réglage Postural Vélo de Course | Service Professionnel',
     description: 'Service de réglage postural professionnel pour vélo de course à Antibes. Analyse vidéo, ajustements précis par nos experts certifiés.',
@@ -356,7 +356,7 @@ export default function ReglagePosturalServicePage() {
             Prêt à optimiser votre position ?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Réservez votre séance de réglage postural avec nos experts Moustache Bikes
+            Réservez votre séance de réglage postural avec nos experts Antibe Cycles AZUR
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
