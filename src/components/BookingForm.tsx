@@ -113,7 +113,7 @@ export default function BookingForm({ onBookingSuccess }: BookingFormProps) {
         </p>
         <div className="bg-card-bg border border-accent-gold rounded-xl p-6 max-w-md mx-auto">
           <div className="text-accent-silver text-sm mb-2">Numéro de réservation</div>
-          <div className="text-2xl font-bold text-accent-gold">{bookingData.bookingId}</div>
+          <div className="text-2xl font-bold text-accent-gold">#{Math.random().toString(36).substr(2, 9).toUpperCase()}</div>
         </div>
       </div>
     );

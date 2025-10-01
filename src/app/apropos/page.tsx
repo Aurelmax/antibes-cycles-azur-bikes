@@ -17,17 +17,17 @@ export default function AproposPage() {
             <h2 className="text-4xl font-bold text-center mb-12 text-white tracking-wide">NOTRE HISTOIRE</h2>
             <div className="max-w-4xl mx-auto text-accent-silver leading-relaxed text-lg">
               <p className="mb-6">
-                Née de la passion pour l'électromobilité et l'amour du cyclisme, Antibe Cycles AZUR Antibes
-                a vu le jour en 2020 avec une vision claire : démocratiser l'usage du vélo électrique
-                haut de gamme sur la Côte d'Azur.
+                Née de la passion pour l&apos;électromobilité et l&apos;amour du cyclisme, Antibe Cycles AZUR Antibes
+                a vu le jour en 2020 avec une vision claire : démocratiser l&apos;usage du vélo électrique
+                haut de gamme sur la Côte d&apos;Azur.
               </p>
               <p className="mb-6">
                 Forts de notre expertise technique et de notre connaissance du terrain azuréen,
                 nous avons développé une approche unique alliant performance, design et durabilité.
               </p>
               <p>
-                Aujourd'hui, nous sommes fiers d'être la référence locale pour l'électromobilité
-                et d'accompagner nos clients dans leur transition vers une mobilité plus durable.
+                Aujourd&apos;hui, nous sommes fiers d&apos;être la référence locale pour l&apos;électromobilité
+                et d&apos;accompagner nos clients dans leur transition vers une mobilité plus durable.
               </p>
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function AproposPage() {
               <div className="text-5xl mb-6 text-accent-gold">🌱</div>
               <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">ÉCOLOGIE</h3>
               <p className="text-accent-silver leading-relaxed">
-                Nous croyons en une mobilité respectueuse de l'environnement et nous nous engageons
+                Nous croyons en une mobilité respectueuse de l&apos;environnement et nous nous engageons
                 pour un avenir plus durable.
               </p>
             </div>
@@ -59,7 +59,7 @@ export default function AproposPage() {
               <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">SERVICE</h3>
               <p className="text-accent-silver leading-relaxed">
                 Notre engagement se traduit par un accompagnement personnalisé et un service
-                client d'excellence.
+                client d&apos;excellence.
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function AproposPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent-gold mr-3">✓</span>
-                  <span>Pièces détachées d'origine garanties</span>
+                  <span>Pièces détachées d&apos;origine garanties</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent-gold mr-3">✓</span>
@@ -107,7 +107,7 @@ export default function AproposPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-accent-gold mr-3">✓</span>
-                  <span>Service de dépannage rapide sur la Côte d'Azur</span>
+                  <span>Service de dépannage rapide sur la Côte d&apos;Azur</span>
                 </li>
               </ul>
             </div>

@@ -231,7 +231,7 @@ export default function MapboxMap({ className = '' }: MapboxMapProps) {
       // Gestion des erreurs de source
       map.current.on('sourcedata', (e) => {
         if (e.isSourceLoaded && e.source && e.source.type === 'geojson') {
-          console.log('Source GeoJSON chargée:', e.source.id);
+           console.log('Source GeoJSON chargée:', (e.source as { id?: string }).id);
         }
       });
 
@@ -246,19 +246,19 @@ export default function MapboxMap({ className = '' }: MapboxMapProps) {
             .setLngLat(e.lngLat)
             .setHTML(`
               <div class="p-4 bg-primary-black text-white rounded-lg border border-accent-gold">
-                <h3 class="text-lg font-bold text-accent-gold mb-2">${properties.name}</h3>
+                <h3 class="text-lg font-bold text-accent-gold mb-2">${properties?.name || 'Parcours'}</h3>
                 <div class="space-y-1 text-sm">
                   <div class="flex justify-between">
                     <span>Distance:</span>
-                    <span class="font-semibold">${properties.distance}</span>
+                    <span class="font-semibold">${properties?.distance || 'N/A'}</span>
                   </div>
                   <div class="flex justify-between">
                     <span>Durée:</span>
-                    <span class="font-semibold">${properties.duration}</span>
+                    <span class="font-semibold">${properties?.duration || 'N/A'}</span>
                   </div>
                   <div class="flex justify-between">
                     <span>Difficulté:</span>
-                    <span class="font-semibold text-${properties.difficulty === 'Facile' ? 'green' : properties.difficulty === 'Modéré' ? 'blue' : 'purple'}-400">${properties.difficulty}</span>
+                    <span class="font-semibold text-${properties?.difficulty === 'Facile' ? 'green' : properties?.difficulty === 'Modéré' ? 'blue' : 'purple'}-400">${properties?.difficulty || 'N/A'}</span>
                   </div>
                 </div>
               </div>
@@ -278,8 +278,8 @@ export default function MapboxMap({ className = '' }: MapboxMapProps) {
             .setHTML(`
               <div class="p-4 bg-primary-black text-white rounded-lg border border-accent-gold">
                 <div class="flex items-center mb-2">
-                  <span class="text-2xl mr-2">${properties.icon}</span>
-                  <h3 class="text-lg font-bold text-accent-gold">${properties.name}</h3>
+                  <span class="text-2xl mr-2">${properties?.icon || '📍'}</span>
+                  <h3 class="text-lg font-bold text-accent-gold">${properties?.name || 'Point d\'intérêt'}</h3>
                 </div>
                 <p class="text-sm text-accent-silver">Point d'intérêt à découvrir</p>
               </div>

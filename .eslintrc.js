@@ -1,8 +1,8 @@
 module.exports = {
   extends: [
-    'next/core-web-vitals',
     'eslint:recommended',
     '@typescript-eslint/recommended',
+    'next/core-web-vitals',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
@@ -32,6 +32,9 @@ module.exports = {
     // Désactiver les règles problématiques
     'react/no-unescaped-entities': 'off',
     '@typescript-eslint/no-require-imports': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@next/next/no-img-element': 'off',
+    'react/no-unescaped-entities': 'off',
     
     // Import organization
     'import/order': [

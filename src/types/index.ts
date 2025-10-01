@@ -1,17 +1,18 @@
 // Point d'entrée pour tous les types Antibe Cycles AZUR
 // Export centralisé des conventions de typage
 
-// Types métier
-export * from './business';
+// Types métier (sélectionnés pour éviter les conflits)
+export type { Product, ProductVariant, Service, Booking, Customer } from './business';
+export type { ProductCategory, ServiceCategory, BookingStatus, RentalDuration } from './business';
 
 // Types API
-export * from './api';
+export type { ApiResponse, ApiError, ApiMeta } from './api';
 
 // Types d'affichage
-export * from './display';
+export type { DisplayConfig, ThemeConfig, ColorConfig } from './display';
 
 // Constantes et enums
-export * from './constants';
+export { BUSINESS_CONFIG, DISPLAY_CONSTANTS, VALIDATION_CONSTANTS, API_CONSTANTS } from './constants';
 
 // Types utilitaires
 export type ID = string;
