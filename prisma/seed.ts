@@ -79,9 +79,15 @@ async function main() {
 
   for (const productData of products) {
     await prisma.product.upsert({
-      where: { name: productData.name },
-      update: productData,
-      create: productData
+      where: { id: 0 }, // Utiliser un ID temporaire pour l'upsert
+      update: {
+        ...productData,
+        imageUrl: '/images/default-bike.jpg' // Ajouter l'imageUrl manquante
+      },
+      create: {
+        ...productData,
+        imageUrl: '/images/default-bike.jpg' // Ajouter l'imageUrl manquante
+      }
     })
   }
 
