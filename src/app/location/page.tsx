@@ -113,6 +113,7 @@ export default function LocationPage() {
         subtitle="Découvrez les merveilles de la Côte d'Azur avec nos vélos électriques Moustache haut de gamme. De la vieille ville au Cap d'Antibes, vivez une expérience inoubliable !"
         buttonText="RÉSERVER MAINTENANT"
         buttonLink="#bikes"
+        backgroundImage="/images/bikes/samedi-28/montagne-antibes.jpg"
       />
 
       {/* Section Pourquoi louer */}

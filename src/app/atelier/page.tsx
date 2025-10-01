@@ -9,6 +9,7 @@ export default function AtelierPage() {
         subtitle="Entretien, réparation et personnalisation de votre vélo électrique par nos experts certifiés"
         buttonText="PRENDRE RDV"
         buttonLink="#services"
+        backgroundImage="/images/bikes/samedi-28/montagne-antibes.jpg"
       />
       
       <div className="py-12" id="services">

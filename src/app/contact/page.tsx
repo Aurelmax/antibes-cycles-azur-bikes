@@ -8,6 +8,7 @@ export default function ContactPage() {
         subtitle="Une question ? Un conseil ? N'hésitez pas à nous contacter !"
         buttonText="NOUS ÉCRIRE"
         buttonLink="#contact-form"
+        backgroundImage="/images/bikes/samedi-28/montagne-antibes.jpg"
       />
       
       <div className="py-8" id="contact-form">

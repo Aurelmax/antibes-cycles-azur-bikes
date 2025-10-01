@@ -8,6 +8,7 @@ export default function AproposPage() {
         subtitle="Votre partenaire de confiance pour l'électromobilité haut de gamme à Antibes depuis 2020"
         buttonText="NOTRE HISTOIRE"
         buttonLink="#histoire"
+        backgroundImage="/images/bikes/samedi-28/montagne-antibes.jpg"
       />
       
       <div className="py-12" id="histoire">

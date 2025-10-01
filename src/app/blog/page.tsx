@@ -43,6 +43,7 @@ export default function BlogPage() {
         subtitle="Découvrez nos conseils, actualités et guides pour profiter pleinement de votre vélo électrique haut de gamme"
         buttonText="DÉCOUVRIR"
         buttonLink="#articles"
+        backgroundImage="/images/bikes/samedi-28/montagne-antibes.jpg"
       />
       
       <div className="max-w-6xl mx-auto py-12" id="articles">
