@@ -79,7 +79,7 @@ export default function CataloguePage() {
                 </div>
               </div>
 
-              <Link href="/produit/samedi-28-1" className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-glow-intense flex items-center justify-center mt-auto">
+              <Link href="/produit/samedi-28-1" className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-shimmer-intense button-pulse flex items-center justify-center mt-auto">
                 <span className="mr-2">▶</span>
                 DÉCOUVRIR
               </Link>
@@ -137,7 +137,7 @@ export default function CataloguePage() {
                 </div>
               </div>
 
-              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-glow-intense flex items-center justify-center mt-auto">
+              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-shimmer-intense button-pulse flex items-center justify-center mt-auto">
                 <span className="mr-2">▶</span>
                 DÉCOUVRIR
               </button>
@@ -194,7 +194,7 @@ export default function CataloguePage() {
                 </div>
               </div>
 
-              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-glow-intense flex items-center justify-center mt-auto">
+              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-shimmer-intense button-pulse flex items-center justify-center mt-auto">
                 <span className="mr-2">▶</span>
                 DÉCOUVRIR
               </button>
@@ -254,7 +254,7 @@ export default function CataloguePage() {
                   Justificatifs simples
                 </li>
               </ul>
-              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-glow-intense">
+              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-shimmer-intense button-pulse">
                 DEMANDER UN DEVIS
               </button>
             </div>
@@ -279,7 +279,7 @@ export default function CataloguePage() {
                   Conditions flexibles
                 </li>
               </ul>
-              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-glow-intense">
+              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-shimmer-intense button-pulse">
                 EN SAVOIR PLUS
               </button>
             </div>
@@ -304,7 +304,7 @@ export default function CataloguePage() {
                   Simulation gratuite
                 </li>
               </ul>
-              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-glow-intense">
+              <button className="w-full bg-accent-gold text-primary-black py-3 rounded-lg font-bold hover:bg-white hover:text-primary-black transition-all duration-300 button-shimmer-intense button-pulse">
                 SIMULER
               </button>
             </div>

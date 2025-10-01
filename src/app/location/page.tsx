@@ -2,12 +2,31 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import LocationForm from '@/components/LocationForm';
 import Hero from '@/components/Hero';
+import BookingModal from '@/components/BookingModal';
 
 export default function LocationPage() {
   const [selectedDuration, setSelectedDuration] = useState('day');
   const [selectedBike, setSelectedBike] = useState('');
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [bookingBike, setBookingBike] = useState('');
+
+  const handleOpenBookingModal = (bikeName: string) => {
+    setBookingBike(bikeName);
+    setIsBookingModalOpen(true);
+  };
+
+  const handleCloseBookingModal = () => {
+    setIsBookingModalOpen(false);
+    setBookingBike('');
+  };
+
+  const handleBookingSuccess = (bookingData: any) => {
+    console.log('Réservation confirmée:', bookingData);
+    // Ici vous pourriez envoyer les données à votre API
+    // ou rediriger vers une page de confirmation
+    alert(`Réservation confirmée pour ${bookingData.bike} ! Vous recevrez un email de confirmation.`);
+  };
 
   const pricingOptions = {
     halfday: { label: 'Demi-journée (4h)', price: 25, popular: false },
@@ -156,69 +175,8 @@ export default function LocationPage() {
         </div>
       </section>
 
-      {/* Section Vélos Disponibles */}
-      <section id="bikes" className="py-16 bg-primary-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4 tracking-wide">NOS VÉLOS DISPONIBLES</h2>
-            <p className="text-xl text-accent-silver max-w-2xl mx-auto">
-              Choisissez le vélo parfait pour votre aventure antiboise
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {availableBikes.map((bike) => (
-              <div key={bike.id} className="bg-card-bg border border-border-color rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover-glow">
-                <div className={`aspect-w-4 aspect-h-3 {bike.available ? 'bg-gradient-to-br from-accent-gold/20 to-accent-gold/10' : 'bg-gradient-to-br from-gray-100 to-gray-200'} flex items-center justify-center relative`}>
-                  <div className="text-6xl">{bike.image}</div>
-                  {!bike.available && (
-                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                      <span className="bg-red-500 text-white px-4 py-2 rounded-full font-bold">Indisponible</span>
-                    </div>
-                  )}
-                  {bike.available && (
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-accent-gold text-primary-black px-3 py-1 rounded-full text-sm font-bold">Disponible</span>
-                    </div>
-                  )}
-                </div>
-
-                <div className="p-6">
-                  <div className="mb-2">
-                    <span className="bg-accent-gold/20 text-accent-gold text-xs font-semibold px-2 py-1 rounded-full">{bike.category}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2 tracking-wide">{bike.name}</h3>
-                  <p className="text-accent-silver text-sm mb-4">{bike.description}</p>
-
-                  <div className="space-y-2 mb-4">
-                    {bike.features.map((feature, index) => (
-                      <div key={index} className="flex items-center text-sm text-accent-silver">
-                        <span className="text-accent-gold mr-2">✓</span>
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={() => setSelectedBike(bike.name)}
-                    className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 tracking-wide {
-                      bike.available
-                        ? 'bg-accent-gold text-primary-black hover:bg-white hover:text-primary-black hover-glow'
-                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    }`}
-                    disabled={!bike.available}
-                  >
-                    {bike.available ? 'RÉSERVER CE MODÈLE' : 'INDISPONIBLE'}
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Section Tarifs Interactifs */}
-      <section className="py-16 bg-secondary-black">
+      <section id="bikes" className="py-16 bg-secondary-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4 tracking-wide">NOS TARIFS</h2>
@@ -233,21 +191,20 @@ export default function LocationPage() {
                 className={`relative bg-card-bg border border-border-color rounded-2xl p-8 text-center cursor-pointer transition-all duration-300 transform hover:scale-105 hover-glow {
                   selectedDuration === key
                     ? 'ring-4 ring-accent-gold shadow-2xl'
-                    : 'shadow-xl hover:shadow-2xl'
-                } ${option.popular ? 'border-accent-gold' : 'border-border-color'}`}
+                    : 'hover:shadow-xl'
+                }`}
               >
                 {option.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className="bg-accent-gold text-primary-black px-4 py-2 rounded-full text-sm font-bold">
-                      ⭐ PLUS POPULAIRE
+                      ⭐ POPULAIRE
                     </span>
                   </div>
                 )}
-
-                <div className="text-3xl font-bold text-accent-gold mb-2">{option.price}€</div>
-                <h3 className="text-lg font-semibold text-white mb-4 tracking-wide">{option.label}</h3>
-
-                <div className="text-sm text-accent-silver space-y-2">
+                <div className="text-4xl mb-4 text-accent-gold">⏰</div>
+                <h3 className="text-xl font-bold text-white mb-2 tracking-wide">{option.label}</h3>
+                <div className="text-3xl font-bold text-accent-gold mb-4">{option.price}€</div>
+                <div className="space-y-2 text-sm text-accent-silver">
                   <div className="flex items-center justify-center">
                     <span className="text-accent-gold mr-2">✓</span>
                     Vélo + équipements
@@ -291,6 +248,67 @@ export default function LocationPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Vélos Disponibles */}
+      <section className="py-16 bg-primary-black">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4 tracking-wide">NOS VÉLOS DISPONIBLES</h2>
+            <p className="text-xl text-accent-silver max-w-2xl mx-auto">
+              Choisissez le vélo parfait pour votre aventure antiboise
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {availableBikes.map((bike) => (
+              <div key={bike.id} className="bg-card-bg border border-border-color rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover-glow">
+                <div className={`aspect-w-4 aspect-h-3 {bike.available ? 'bg-gradient-to-br from-accent-gold/20 to-accent-gold/10' : 'bg-gradient-to-br from-gray-100 to-gray-200'} flex items-center justify-center relative`}>
+                  <div className="text-6xl">{bike.image}</div>
+                  {!bike.available && (
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                      <span className="bg-red-500 text-white px-4 py-2 rounded-full font-bold">Indisponible</span>
+                    </div>
+                  )}
+                  {bike.available && (
+                    <div className="absolute top-4 right-4">
+                      <span className="bg-accent-gold text-primary-black px-3 py-1 rounded-full text-sm font-bold">Disponible</span>
+                    </div>
+                  )}
+                </div>
+
+                <div className="p-6">
+                  <div className="mb-2">
+                    <span className="bg-accent-gold/20 text-accent-gold text-xs font-semibold px-2 py-1 rounded-full">{bike.category}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2 tracking-wide">{bike.name}</h3>
+                  <p className="text-accent-silver text-sm mb-4">{bike.description}</p>
+
+                  <div className="space-y-2 mb-4">
+                    {bike.features.map((feature, index) => (
+                      <div key={index} className="flex items-center text-sm text-accent-silver">
+                        <span className="text-accent-gold mr-2">✓</span>
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => bike.available ? handleOpenBookingModal(bike.name) : null}
+                    className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 tracking-wide {
+                      bike.available
+                        ? 'bg-accent-gold text-primary-black hover:bg-white hover:text-primary-black button-shimmer-intense button-pulse'
+                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    }`}
+                    disabled={!bike.available}
+                  >
+                    {bike.available ? 'RÉSERVER CE MODÈLE' : 'INDISPONIBLE'}
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -514,59 +532,6 @@ export default function LocationPage() {
         </div>
       </section>
 
-      {/* Formulaire de réservation et conditions */}
-      <section className="py-16 bg-secondary-black">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6 tracking-wide">RÉSERVEZ MAINTENANT</h2>
-              <LocationForm />
-            </div>
-
-            <div>
-              <div className="bg-card-bg border border-border-color rounded-2xl p-8 shadow-xl">
-                <h2 className="text-2xl font-semibold mb-6 text-center text-white tracking-wide">CONDITIONS DE LOCATION</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-accent-silver">
-                  <div>
-                    <h3 className="font-semibold mb-3 text-lg text-white">📋 DOCUMENTS REQUIS</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-center">
-                        <span className="text-accent-gold mr-2">•</span>
-                        Pièce d'identité valide
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-accent-gold mr-2">•</span>
-                        Justificatif de domicile
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-accent-gold mr-2">•</span>
-                        Caution de 500€ (chèque ou CB)
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-3 text-lg text-white">⏰ HORAIRES</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-center">
-                        <span className="text-accent-gold mr-2">•</span>
-                        Retrait: 9h-18h en semaine
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-accent-gold mr-2">•</span>
-                        Retour: jusqu'à 19h
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-accent-gold mr-2">•</span>
-                        Week-end: sur rendez-vous
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Final */}
       <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 relative overflow-hidden">
@@ -609,6 +574,14 @@ export default function LocationPage() {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/5 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}} />
       </section>
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={handleCloseBookingModal}
+        selectedBike={bookingBike}
+        onBookingSuccess={handleBookingSuccess}
+      />
     </div>
   );
 }

@@ -50,7 +50,7 @@ export default function HomePage() {
               <div className="text-5xl mb-6 text-accent-gold">🚴‍♂️</div>
               <h3 className="text-2xl font-bold mb-4 text-white tracking-wide">VENTE</h3>
               <p className="text-accent-silver mb-6 leading-relaxed">Large gamme de vélos électriques Moustache pour tous les besoins</p>
-              <Link href="/catalogue" className="text-accent-gold hover:text-black font-bold transition-colors tracking-wide button-sparkle">
+              <Link href="/catalogue" className="inline-block bg-accent-gold text-primary-black px-6 py-3 rounded-lg font-bold hover:text-black transition-all duration-300 tracking-wide button-shimmer-intense button-pulse">
                 VOIR LE CATALOGUE →
               </Link>
             </div>
@@ -58,7 +58,7 @@ export default function HomePage() {
               <div className="text-5xl mb-6 text-accent-gold">📅</div>
               <h3 className="text-2xl font-bold mb-4 text-white tracking-wide">LOCATION</h3>
               <p className="text-accent-silver mb-6 leading-relaxed">Essayez nos vélos avant achat ou pour vos sorties</p>
-              <Link href="/location" className="text-accent-gold hover:text-black font-bold transition-colors tracking-wide button-sparkle">
+              <Link href="/location" className="inline-block bg-accent-gold text-primary-black px-6 py-3 rounded-lg font-bold hover:text-black transition-all duration-300 tracking-wide button-shimmer-intense button-pulse">
                 RÉSERVER →
               </Link>
             </div>
@@ -66,7 +66,7 @@ export default function HomePage() {
               <div className="text-5xl mb-6 text-accent-gold">🔧</div>
               <h3 className="text-2xl font-bold mb-4 text-white tracking-wide">ATELIER</h3>
               <p className="text-accent-silver mb-6 leading-relaxed">Entretien et réparation par nos experts</p>
-              <Link href="/atelier" className="text-accent-gold hover:text-black font-bold transition-colors tracking-wide button-sparkle">
+              <Link href="/atelier" className="inline-block bg-accent-gold text-primary-black px-6 py-3 rounded-lg font-bold hover:text-black transition-all duration-300 tracking-wide button-shimmer-intense button-pulse">
                 EN SAVOIR PLUS →
               </Link>
             </div>
