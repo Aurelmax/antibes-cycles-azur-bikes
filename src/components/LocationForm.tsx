@@ -1,146 +1,132 @@
-'use client';
-
-import { useState } from 'react';
-
-interface LocationFormData {
-  nom: string;
-  email: string;
-  velo: string;
-  date: string;
-  duree: string;
-  message: string;
-}
+import { useState } from 'react'
 
 export default function LocationForm() {
-  const [formData, setFormData] = useState<LocationFormData>({
-    nom: '',
-    email: '',
-    velo: '',
-    date: '',
-    duree: '',
-    message: ''
-  });
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [bikeId, setBikeId] = useState<number | ''>('')
+  const [startDate, setStartDate] = useState('')
+  const [duration, setDuration] = useState(1)
+  const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    setSuccess(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Demande de location:', formData);
-  };
+    if (!name || !email || !bikeId || !startDate || duration < 1) {
+      setError('Merci de remplir tous les champs obligatoires.')
+      setLoading(false)
+      return
+    }
+
+    try {
+      const res = await fetch('/api/location', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, bikeId, startDate, duration, message })
+      })
+      if (!res.ok) throw new Error('Erreur serveur')
+      setSuccess(true)
+      setName(''); setEmail(''); setBikeId(''); setStartDate(''); setDuration(1); setMessage('')
+    } catch (err) {
+      setError('Erreur lors de l’envoi, veuillez réessayer.')
+    }
+    setLoading(false)
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
-      <div className="mb-4">
-        <label htmlFor="nom" className="block text-sm font-medium text-gray-700 mb-2">
-          Nom complet
-        </label>
-        <input
-          type="text"
-          id="nom"
-          name="nom"
-          value={formData.nom}
-          onChange={handleChange}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        />
-      </div>
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6 p-8 bg-card-bg border border-border-color rounded-xl shadow-xl">
+      <h2 className="text-2xl font-bold text-white tracking-wide text-center mb-6">FORMULAIRE DE LOCATION</h2>
 
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        />
-      </div>
+      {error && <p className="text-red-400 bg-red-900/20 border border-red-500 px-4 py-3 rounded-lg">{error}</p>}
+      {success && <p className="text-green-400 bg-green-900/20 border border-green-500 px-4 py-3 rounded-lg">Votre demande a été envoyée avec succès !</p>}
 
-      <div className="mb-4">
-        <label htmlFor="velo" className="block text-sm font-medium text-gray-700 mb-2">
-          Velo souhaite
-        </label>
-        <select
-          id="velo"
-          name="velo"
-          value={formData.velo}
-          onChange={handleChange}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      <label className="block">
+        <span className="text-white font-bold mb-2 block tracking-wide">NOM COMPLET *</span>
+        <input 
+          type="text" 
+          value={name} 
+          onChange={e => setName(e.target.value)} 
+          required 
+          className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+          placeholder="Votre nom complet"
+        />
+      </label>
+
+      <label className="block">
+        <span className="text-white font-bold mb-2 block tracking-wide">EMAIL *</span>
+        <input 
+          type="email" 
+          value={email} 
+          onChange={e => setEmail(e.target.value)} 
+          required 
+          className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+          placeholder="votre@email.com"
+        />
+      </label>
+
+      <label className="block">
+        <span className="text-white font-bold mb-2 block tracking-wide">SÉLECTIONNEZ UN VÉLO *</span>
+        <select 
+          value={bikeId} 
+          onChange={e => setBikeId(Number(e.target.value))} 
+          required 
+          className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold"
         >
-          <option value="">Selectionnez un velo</option>
-          <option value="Samedi 27 Xroad">Samedi 27 Xroad</option>
-          <option value="Lundi 26.1">Lundi 26.1</option>
-          <option value="Dimanche 28.7">Dimanche 28.7</option>
-          <option value="Friday 27.5">Friday 27.5</option>
+          <option value="">-- Choisir un vélo --</option>
+          <option value={1}>Lundi 26</option>
+          <option value={2}>Friday 26</option>
+          <option value={3}>Saturday 28</option>
+          {/* Cette liste sera rendue dynamique avec les données */}
         </select>
-      </div>
+      </label>
 
-      <div className="mb-4">
-        <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
-          Date de debut
-        </label>
-        <input
-          type="date"
-          id="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      <label className="block">
+        <span className="text-white font-bold mb-2 block tracking-wide">DATE DE DÉBUT *</span>
+        <input 
+          type="date" 
+          value={startDate} 
+          onChange={e => setStartDate(e.target.value)} 
+          required 
+          className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold" 
         />
-      </div>
+      </label>
 
-      <div className="mb-4">
-        <label htmlFor="duree" className="block text-sm font-medium text-gray-700 mb-2">
-          Duree
-        </label>
-        <select
-          id="duree"
-          name="duree"
-          value={formData.duree}
-          onChange={handleChange}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        >
-          <option value="">Selectionnez la duree</option>
-          <option value="demi-journee">Demi-journee</option>
-          <option value="journee">Journee complete</option>
-          <option value="weekend">Week-end</option>
-          <option value="semaine">Semaine</option>
-        </select>
-      </div>
-
-      <div className="mb-6">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-          Message (optionnel)
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder="Informations complementaires..."
+      <label className="block">
+        <span className="text-white font-bold mb-2 block tracking-wide">DURÉE (JOURS) *</span>
+        <input 
+          type="number" 
+          min="1" 
+          value={duration} 
+          onChange={e => setDuration(Number(e.target.value))} 
+          required 
+          className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+          placeholder="Nombre de jours"
         />
-      </div>
+      </label>
 
-      <button
-        type="submit"
-        className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors font-medium"
+      <label className="block">
+        <span className="text-white font-bold mb-2 block tracking-wide">MESSAGE / DEMANDE SPÉCIALE</span>
+        <textarea 
+          value={message} 
+          onChange={e => setMessage(e.target.value)} 
+          className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+          rows={3} 
+          placeholder="Votre message ou demande spéciale..."
+        />
+      </label>
+
+      <button 
+        type="submit" 
+        disabled={loading} 
+        className="w-full bg-accent-gold text-primary-black py-4 px-6 rounded-lg hover:bg-white hover:text-primary-black transition-all duration-300 font-bold tracking-wide hover-glow button-glow-intense button-shimmer disabled:bg-gray-500 disabled:text-gray-300"
       >
-        Envoyer la demande
+        {loading ? 'ENVOI...' : 'ENVOYER LA DEMANDE'}
       </button>
     </form>
-  );
+  )
 }

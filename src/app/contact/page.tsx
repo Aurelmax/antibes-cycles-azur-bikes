@@ -1,192 +1,174 @@
+import Hero from '@/components/Hero';
+
 export default function ContactPage() {
   return (
-    <div className="py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Contactez-nous</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Une question ? Un conseil ? N'hésitez pas à nous contacter !
-        </p>
-      </div>
+    <div>
+      <Hero 
+        title="CONTACTEZ-NOUS"
+        subtitle="Une question ? Un conseil ? N'hésitez pas à nous contacter !"
+        buttonText="NOUS ÉCRIRE"
+        buttonLink="#contact-form"
+      />
+      
+      <div className="py-8" id="contact-form">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-8 tracking-wide">NOS COORDONNÉES</h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">Nos coordonnées</h2>
-
-          <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex items-start mb-4">
-                <div className="text-2xl mr-4">📍</div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Adresse</h3>
-                  <p className="text-gray-600">
-                    123 Avenue de la République<br />
-                    06600 Antibes<br />
-                    France
-                  </p>
+            <div className="space-y-6">
+              <div className="bg-card-bg border border-border-color rounded-lg shadow-xl p-6 hover:shadow-2xl transition-all duration-300 hover-glow">
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl mr-4 text-accent-gold">📍</div>
+                  <h3 className="text-xl font-bold text-white tracking-wide">ADRESSE</h3>
                 </div>
+                <p className="text-accent-silver">
+                  Moustache Bikes Antibes<br />
+                  123 Avenue de la République<br />
+                  06600 Antibes, France
+                </p>
               </div>
-            </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex items-start mb-4">
-                <div className="text-2xl mr-4">📞</div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Téléphone</h3>
-                  <p className="text-gray-600">
-                    <a href="tel:+33400000000" className="hover:text-blue-600">
-                      04 XX XX XX XX
-                    </a>
-                  </p>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Du lundi au samedi de 9h à 18h
-                  </p>
+              <div className="bg-card-bg border border-border-color rounded-lg shadow-xl p-6 hover:shadow-2xl transition-all duration-300 hover-glow">
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl mr-4 text-accent-gold">📞</div>
+                  <h3 className="text-xl font-bold text-white tracking-wide">TÉLÉPHONE</h3>
                 </div>
+                <p className="text-accent-silver">
+                  <a href="tel:+33493956789" className="hover:text-accent-gold transition-colors">
+                    04 93 95 67 89
+                  </a>
+                </p>
               </div>
-            </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex items-start mb-4">
-                <div className="text-2xl mr-4">✉️</div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Email</h3>
-                  <p className="text-gray-600">
-                    <a href="mailto:contact@moustachebikes-antibes.fr" className="hover:text-blue-600">
-                      contact@moustachebikes-antibes.fr
-                    </a>
-                  </p>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Réponse sous 24h
-                  </p>
+              <div className="bg-card-bg border border-border-color rounded-lg shadow-xl p-6 hover:shadow-2xl transition-all duration-300 hover-glow">
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl mr-4 text-accent-gold">📧</div>
+                  <h3 className="text-xl font-bold text-white tracking-wide">EMAIL</h3>
                 </div>
+                <p className="text-accent-silver">
+                  <a href="mailto:contact@moustachebike-antibes.fr" className="hover:text-accent-gold transition-colors">
+                    contact@moustachebike-antibes.fr
+                  </a>
+                </p>
               </div>
-            </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex items-start mb-4">
-                <div className="text-2xl mr-4">⏰</div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Horaires d'ouverture</h3>
-                  <div className="text-gray-600 space-y-1">
-                    <p>Lundi - Vendredi: 9h00 - 19h00</p>
-                    <p>Samedi: 9h00 - 18h00</p>
-                    <p>Dimanche: 10h00 - 17h00</p>
-                  </div>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Fermé les jours fériés
-                  </p>
+              <div className="bg-card-bg border border-border-color rounded-lg shadow-xl p-6 hover:shadow-2xl transition-all duration-300 hover-glow">
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl mr-4 text-accent-gold">⏰</div>
+                  <h3 className="text-xl font-bold text-white tracking-wide">HORAIRES</h3>
+                </div>
+                <div className="text-accent-silver space-y-1">
+                  <p>Lundi - Vendredi: 9h - 19h</p>
+                  <p>Samedi: 9h - 18h</p>
+                  <p>Dimanche: 10h - 17h</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">Envoyez-nous un message</h2>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-8 tracking-wide">NOUS ÉCRIRE</h2>
+            
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Prénom
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  <label className="block text-white font-bold mb-2 tracking-wide">PRÉNOM</label>
+                  <input 
+                    type="text" 
+                    className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+                    placeholder="Votre prénom"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Nom
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  <label className="block text-white font-bold mb-2 tracking-wide">NOM</label>
+                  <input 
+                    type="text" 
+                    className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+                    placeholder="Votre nom"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                <label className="block text-white font-bold mb-2 tracking-wide">EMAIL</label>
+                <input 
+                  type="email" 
+                  className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+                  placeholder="votre@email.com"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Téléphone (optionnel)
-                </label>
-                <input
-                  type="tel"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                <label className="block text-white font-bold mb-2 tracking-wide">TÉLÉPHONE</label>
+                <input 
+                  type="tel" 
+                  className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+                  placeholder="04 XX XX XX XX"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Sujet
-                </label>
-                <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                  <option value="">Sélectionnez un sujet</option>
+                <label className="block text-white font-bold mb-2 tracking-wide">SUJET</label>
+                <select className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold">
+                  <option value="">Choisir un sujet</option>
                   <option value="info">Demande d'information</option>
+                  <option value="location">Location de vélo</option>
                   <option value="achat">Achat de vélo</option>
-                  <option value="location">Location</option>
-                  <option value="atelier">Service atelier</option>
+                  <option value="entretien">Entretien</option>
+                  <option value="reglage-postural">Réglage postural</option>
                   <option value="autre">Autre</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Décrivez votre demande..."
+                <label className="block text-white font-bold mb-2 tracking-wide">MESSAGE</label>
+                <textarea 
+                  className="w-full px-4 py-3 bg-secondary-black border border-border-color text-white rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-accent-gold placeholder-text-gray" 
+                  rows={6}
+                  placeholder="Votre message..."
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors font-medium"
+              <button 
+                type="submit" 
+                className="w-full bg-accent-gold text-primary-black py-4 px-6 rounded-lg font-bold tracking-wide hover:bg-white hover:text-primary-black transition-all duration-300 hover-glow button-glow-intense button-shimmer"
               >
-                Envoyer le message
+                ENVOYER LE MESSAGE
               </button>
             </form>
           </div>
         </div>
-      </div>
 
-      <div className="bg-blue-50 rounded-lg p-8">
-        <h2 className="text-2xl font-semibold text-center mb-6">Comment nous trouver</h2>
-        <div className="text-center mb-6">
-          <div className="bg-gray-300 h-64 rounded-lg flex items-center justify-center text-gray-600">
-            <div>
-              <div className="text-4xl mb-2">🗺️</div>
-              <p>Carte interactive Google Maps</p>
-              <p className="text-sm">123 Avenue de la République, Antibes</p>
+        <div className="bg-card-bg border border-accent-gold rounded-2xl p-8">
+          <h2 className="text-3xl font-bold text-center mb-8 text-white tracking-wide">NOUS TROUVER</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-4xl mb-4 text-accent-gold">🚗</div>
+              <h3 className="text-xl font-bold text-white mb-2 tracking-wide">EN VOITURE</h3>
+              <p className="text-accent-silver">
+                Parking gratuit disponible<br />
+                Accès direct depuis l'A8
+              </p>
             </div>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div>
-            <div className="text-2xl mb-2">🚗</div>
-            <h3 className="font-semibold mb-1">En voiture</h3>
-            <p className="text-sm text-gray-600">Parking gratuit devant le magasin</p>
-          </div>
-          <div>
-            <div className="text-2xl mb-2">🚌</div>
-            <h3 className="font-semibold mb-1">En bus</h3>
-            <p className="text-sm text-gray-600">Arrêt "République" (lignes 2, 8, 14)</p>
-          </div>
-          <div>
-            <div className="text-2xl mb-2">🚶</div>
-            <h3 className="font-semibold mb-1">À pied</h3>
-            <p className="text-sm text-gray-600">Centre-ville à 5 minutes</p>
+
+            <div className="text-center">
+              <div className="text-4xl mb-4 text-accent-gold">🚌</div>
+              <h3 className="text-xl font-bold text-white mb-2 tracking-wide">EN TRANSPORT</h3>
+              <p className="text-accent-silver">
+                Bus ligne 2, arrêt République<br />
+                Gare SNCF à 5 minutes
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl mb-4 text-accent-gold">🚴‍♂️</div>
+              <h3 className="text-xl font-bold text-white mb-2 tracking-wide">À VÉLO</h3>
+              <p className="text-accent-silver">
+                Piste cyclable directe<br />
+                Stationnement vélo sécurisé
+              </p>
+            </div>
           </div>
         </div>
       </div>

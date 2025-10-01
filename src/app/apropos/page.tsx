@@ -1,145 +1,153 @@
+import Hero from '@/components/Hero';
+
 export default function AproposPage() {
   return (
-    <div className="py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">À propos de nous</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Votre partenaire de confiance pour l'électromobilité à Antibes depuis 2020
-        </p>
-      </div>
-
-      <div className="mb-16">
-        <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-8">
-          <h2 className="text-3xl font-semibold text-center mb-8">Notre histoire</h2>
-          <div className="max-w-4xl mx-auto text-gray-700 leading-relaxed">
-            <p className="mb-6">
-              Née de la passion pour l'électromobilité et l'amour du cyclisme, Moustache Bikes Antibes
-              a ouvert ses portes en 2020 avec l'ambition de démocratiser le vélo électrique sur la Côte d'Azur.
-            </p>
-            <p className="mb-6">
-              Spécialistes de la marque française Moustache Bikes, reconnue pour son innovation et la
-              qualité de ses vélos électriques, nous accompagnons particuliers et professionnels dans
-              leur transition vers une mobilité plus durable et plus agréable.
-            </p>
-            <p>
-              Notre showroom situé au cœur d'Antibes vous accueille pour découvrir, essayer et
-              personnaliser votre future monture électrique.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">Nos valeurs</h2>
-          <div className="space-y-6">
-            <div className="flex items-start">
-              <div className="text-2xl mr-4 mt-1">🌱</div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Écologie</h3>
-                <p className="text-gray-600">
-                  Nous croyons en une mobilité respectueuse de l'environnement.
-                  Chaque vélo vendu contribue à réduire l'empreinte carbone.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div className="text-2xl mr-4 mt-1">🔧</div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Expertise</h3>
-                <p className="text-gray-600">
-                  Notre équipe de techniciens certifiés assure un service de qualité,
-                  de la vente à l'après-vente.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div className="text-2xl mr-4 mt-1">🤝</div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Proximité</h3>
-                <p className="text-gray-600">
-                  Nous privilégions la relation humaine et l'accompagnement personnalisé
-                  de chaque client.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div className="text-2xl mr-4 mt-1">⚡</div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Innovation</h3>
-                <p className="text-gray-600">
-                  Nous sélectionnons les technologies les plus avancées pour vous
-                  offrir la meilleure expérience de conduite.
-                </p>
-              </div>
+    <div>
+      <Hero 
+        title="À PROPOS DE NOUS"
+        subtitle="Votre partenaire de confiance pour l'électromobilité haut de gamme à Antibes depuis 2020"
+        buttonText="NOTRE HISTOIRE"
+        buttonLink="#histoire"
+      />
+      
+      <div className="py-12" id="histoire">
+        <div className="mb-20">
+          <div className="bg-card-bg border border-border-color rounded-2xl p-12 shadow-xl">
+            <h2 className="text-4xl font-bold text-center mb-12 text-white tracking-wide">NOTRE HISTOIRE</h2>
+            <div className="max-w-4xl mx-auto text-accent-silver leading-relaxed text-lg">
+              <p className="mb-6">
+                Née de la passion pour l'électromobilité et l'amour du cyclisme, Moustache Bikes Antibes
+                a vu le jour en 2020 avec une vision claire : démocratiser l'usage du vélo électrique
+                haut de gamme sur la Côte d'Azur.
+              </p>
+              <p className="mb-6">
+                Forts de notre expertise technique et de notre connaissance du terrain azuréen,
+                nous avons développé une approche unique alliant performance, design et durabilité.
+              </p>
+              <p>
+                Aujourd'hui, nous sommes fiers d'être la référence locale pour l'électromobilité
+                et d'accompagner nos clients dans leur transition vers une mobilité plus durable.
+              </p>
             </div>
           </div>
         </div>
 
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">Pourquoi Moustache Bikes ?</h2>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold text-lg mb-2">🇫🇷 Fabrication française</h3>
-                <p className="text-gray-600">
-                  Moustache Bikes conçoit et assemble ses vélos en France, dans les Vosges.
-                </p>
-              </div>
+        <div className="mb-20">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white tracking-wide">NOS VALEURS</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-card-bg border border-border-color rounded-xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover-glow">
+              <div className="text-5xl mb-6 text-accent-gold">🌱</div>
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">ÉCOLOGIE</h3>
+              <p className="text-accent-silver leading-relaxed">
+                Nous croyons en une mobilité respectueuse de l'environnement et nous nous engageons
+                pour un avenir plus durable.
+              </p>
+            </div>
 
-              <div>
-                <h3 className="font-semibold text-lg mb-2">🏆 Design primé</h3>
-                <p className="text-gray-600">
-                  Reconnus pour leur esthétique unique et leur ergonomie exceptionnelle.
-                </p>
-              </div>
+            <div className="bg-card-bg border border-border-color rounded-xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover-glow">
+              <div className="text-5xl mb-6 text-accent-gold">⚡</div>
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">INNOVATION</h3>
+              <p className="text-accent-silver leading-relaxed">
+                Nous adoptons les dernières technologies pour offrir des solutions de mobilité
+                toujours plus performantes et intelligentes.
+              </p>
+            </div>
 
-              <div>
-                <h3 className="font-semibold text-lg mb-2">🔋 Technologie Bosch</h3>
-                <p className="text-gray-600">
-                  Équipés des derniers moteurs et batteries Bosch pour une performance optimale.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-lg mb-2">🛡️ Garantie étendue</h3>
-                <p className="text-gray-600">
-                  Tous nos vélos bénéficient d'une garantie complète et d'un service après-vente dédié.
-                </p>
-              </div>
+            <div className="bg-card-bg border border-border-color rounded-xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover-glow">
+              <div className="text-5xl mb-6 text-accent-gold">🤝</div>
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">SERVICE</h3>
+              <p className="text-accent-silver leading-relaxed">
+                Notre engagement se traduit par un accompagnement personnalisé et un service
+                client d'excellence.
+              </p>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="bg-gray-100 rounded-lg p-8">
-        <h2 className="text-2xl font-semibold text-center mb-8">Notre équipe</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl">
-              👨‍🔧
+        <div className="mb-20">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white tracking-wide">POURQUOI MOUSTACHE BIKES ?</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-card-bg border border-border-color rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-6 tracking-wide">EXPERTISE TECHNIQUE</h3>
+              <ul className="space-y-4 text-accent-silver">
+                <li className="flex items-start">
+                  <span className="text-accent-gold mr-3">✓</span>
+                  <span>Techniciens certifiés par les plus grandes marques</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent-gold mr-3">✓</span>
+                  <span>Diagnostic électronique de pointe</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent-gold mr-3">✓</span>
+                  <span>Pièces détachées d'origine garanties</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent-gold mr-3">✓</span>
+                  <span>Formation continue sur les nouvelles technologies</span>
+                </li>
+              </ul>
             </div>
-            <h3 className="font-semibold text-lg">Marc</h3>
-            <p className="text-gray-600">Fondateur & Technicien expert</p>
+
+            <div className="bg-card-bg border border-border-color rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-6 tracking-wide">CONNAISSANCE LOCALE</h3>
+              <ul className="space-y-4 text-accent-silver">
+                <li className="flex items-start">
+                  <span className="text-accent-gold mr-3">✓</span>
+                  <span>Itinéraires cyclables optimisés pour la région</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent-gold mr-3">✓</span>
+                  <span>Adaptation aux conditions climatiques méditerranéennes</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent-gold mr-3">✓</span>
+                  <span>Réseau de partenaires locaux</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent-gold mr-3">✓</span>
+                  <span>Service de dépannage rapide sur la Côte d'Azur</span>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
 
-          <div className="text-center">
-            <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl">
-              👩‍💼
+        <div className="bg-card-bg border border-accent-gold rounded-2xl p-12">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white tracking-wide">NOTRE ÉQUIPE</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-24 h-24 bg-accent-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl font-bold text-primary-black">JM</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Jean-Marc</h3>
+              <p className="text-accent-gold font-semibold mb-2">Fondateur & Gérant</p>
+              <p className="text-accent-silver text-sm">
+                Passionné de cyclisme depuis 20 ans, expert en électromobilité
+              </p>
             </div>
-            <h3 className="font-semibold text-lg">Sophie</h3>
-            <p className="text-gray-600">Conseillère commerciale</p>
-          </div>
 
-          <div className="text-center">
-            <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl">
-              👨‍🔧
+            <div className="text-center">
+              <div className="w-24 h-24 bg-accent-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl font-bold text-primary-black">SL</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Sophie</h3>
+              <p className="text-accent-gold font-semibold mb-2">Responsable Technique</p>
+              <p className="text-accent-silver text-sm">
+                Certifiée Bosch, spécialiste des moteurs électriques
+              </p>
             </div>
-            <h3 className="font-semibold text-lg">Thomas</h3>
-            <p className="text-gray-600">Mécanicien cycles</p>
+
+            <div className="text-center">
+              <div className="w-24 h-24 bg-accent-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl font-bold text-primary-black">AL</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Alexandre</h3>
+              <p className="text-accent-gold font-semibold mb-2">Conseiller Client</p>
+              <p className="text-accent-silver text-sm">
+                Guide expert des itinéraires cyclables de la région
+              </p>
+            </div>
           </div>
         </div>
       </div>

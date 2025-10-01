@@ -20,22 +20,22 @@ export default function FaqAccordion({ items, className = '' }: FaqAccordionProp
   };
 
   return (
-    <div className={`space-y-4 ${className}`}>
+    <div className={`space-y-6 ${className}`}>
       {items.map((item, index) => (
         <div
           key={index}
-          className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+          className="bg-card-bg border border-border-color rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover-glow"
         >
           <button
             onClick={() => toggleItem(index)}
-            className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-secondary-black transition-all duration-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent-gold focus:ring-opacity-50"
           >
-            <span className="text-lg font-semibold text-gray-800 pr-4">
+            <span className="text-lg font-bold text-white pr-4 tracking-wide">
               {item.question}
             </span>
             <div className="flex-shrink-0">
               <svg
-                className={`w-6 h-6 text-blue-600 transform transition-transform duration-300 ${
+                className={`w-6 h-6 text-accent-gold transform transition-transform duration-300 ${
                   openIndex === index ? 'rotate-180' : 'rotate-0'
                 }`}
                 fill="none"
@@ -57,8 +57,8 @@ export default function FaqAccordion({ items, className = '' }: FaqAccordionProp
               openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <div className="px-6 pb-5 pt-0">
-              <div className="text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+            <div className="px-8 pb-6 pt-0">
+              <div className="text-accent-silver leading-relaxed border-t border-border-color pt-4">
                 {item.answer}
               </div>
             </div>
