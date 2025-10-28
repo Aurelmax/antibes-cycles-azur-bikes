@@ -9,7 +9,7 @@ const blogPosts = [
     excerpt: "Découvrez pourquoi le vélo électrique est devenu le moyen de transport urbain par excellence.",
     content: `
       <p>Le vélo électrique révolutionne la mobilité urbaine en offrant une alternative écologique et pratique à la voiture. Avec l'assistance électrique, les trajets quotidiens deviennent plus accessibles, même pour les personnes moins sportives.</p>
-      
+
       <h2>Pourquoi choisir un vélo électrique ?</h2>
       <p>Les vélos électriques offrent de nombreux avantages :</p>
       <ul>
@@ -18,16 +18,16 @@ const blogPosts = [
         <li><strong>Santé :</strong> Maintien d'une activité physique douce</li>
         <li><strong>Pratique :</strong> Évite les embouteillages et les problèmes de stationnement</li>
       </ul>
-      
+
       <h2>L'assistance électrique : un vrai plus</h2>
       <p>L'assistance électrique permet de parcourir de plus longues distances sans effort excessif. Idéal pour les trajets domicile-travail ou les balades du weekend.</p>
-      
+
       <h2>Notre conseil</h2>
       <p>Chez Antibe Cycles AZUR, nous vous accompagnons dans le choix de votre vélo électrique selon vos besoins et votre budget. N'hésitez pas à nous rendre visite pour un essai !</p>
     `,
     author: "Équipe Moustache",
     date: "2025-01-15",
-    imageUrl: "/api/placeholder/800/400",
+    imageUrl: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&q=80",
     category: "Mobilité urbaine"
   },
   {
@@ -36,7 +36,7 @@ const blogPosts = [
     excerpt: "Tous nos conseils pour maintenir votre vélo électrique en parfait état.",
     content: `
       <p>Un entretien régulier de votre vélo électrique garantit sa longévité et ses performances. Découvrez les gestes essentiels à effectuer régulièrement.</p>
-      
+
       <h2>Entretien quotidien</h2>
       <ul>
         <li>Nettoyage de la chaîne et du dérailleur</li>
@@ -44,7 +44,7 @@ const blogPosts = [
         <li>Contrôle des freins</li>
         <li>Nettoyage général du vélo</li>
       </ul>
-      
+
       <h2>Entretien mensuel</h2>
       <ul>
         <li>Lubrification de la chaîne</li>
@@ -52,13 +52,13 @@ const blogPosts = [
         <li>Contrôle de la batterie</li>
         <li>Réglage des vitesses</li>
       </ul>
-      
+
       <h2>Entretien professionnel</h2>
       <p>Nous recommandons un entretien professionnel tous les 6 mois pour garantir la sécurité et les performances optimales de votre vélo électrique.</p>
     `,
     author: "Technicien Moustache",
     date: "2025-01-10",
-    imageUrl: "/api/placeholder/800/400",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1200&q=80",
     category: "Entretien"
   },
   {
@@ -67,13 +67,13 @@ const blogPosts = [
     excerpt: "Explorez les plus beaux itinéraires cyclables de la Côte d'Azur.",
     content: `
       <p>La région d'Antibes offre de magnifiques parcours cyclables, de la Promenade du Soleil aux collines de l'arrière-pays. Parfait pour découvrir la région en vélo électrique.</p>
-      
+
       <h2>Parcours côtiers</h2>
       <p>La Promenade du Soleil offre un parcours de 7km le long de la mer, parfait pour une balade en famille.</p>
-      
+
       <h2>Parcours de l'arrière-pays</h2>
       <p>Les collines d'Antibes offrent des dénivelés modérés, parfaitement adaptés aux vélos électriques.</p>
-      
+
       <h2>Nos recommandations</h2>
       <ul>
         <li>Cap d'Antibes : 15km, niveau facile</li>
@@ -83,7 +83,7 @@ const blogPosts = [
     `,
     author: "Guide local",
     date: "2025-01-05",
-    imageUrl: "/api/placeholder/800/400",
+    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
     category: "Découverte"
   },
   {
@@ -92,7 +92,7 @@ const blogPosts = [
     excerpt: "Nos conseils d'experts pour faire le bon choix selon vos besoins.",
     content: `
       <p>Choisir son premier vélo électrique peut sembler complexe. Batterie, autonomie, type de motorisation... Voici nos conseils pour vous aider.</p>
-      
+
       <h2>Définir vos besoins</h2>
       <ul>
         <li>Distance quotidienne à parcourir</li>
@@ -100,20 +100,20 @@ const blogPosts = [
         <li>Fréquence d'utilisation</li>
         <li>Budget disponible</li>
       </ul>
-      
+
       <h2>Les critères techniques</h2>
       <h3>La batterie</h3>
       <p>L'autonomie dépend de la capacité de la batterie (exprimée en Wh). Pour un usage urbain, 400Wh suffisent généralement.</p>
-      
+
       <h3>Le moteur</h3>
       <p>Le moteur peut être situé dans la roue avant, arrière ou au niveau du pédalier. Chaque position a ses avantages.</p>
-      
+
       <h2>Notre service</h2>
       <p>Chez Antibe Cycles AZUR, nous vous proposons des essais gratuits pour vous aider à faire le bon choix. Venez nous rendre visite !</p>
     `,
     author: "Conseiller Moustache",
     date: "2024-12-28",
-    imageUrl: "/api/placeholder/800/400",
+    imageUrl: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=1200&q=80",
     category: "Conseils"
   }
 ]

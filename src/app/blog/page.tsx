@@ -10,7 +10,7 @@ const blogPosts = [
     content: "Le vélo électrique révolutionne la mobilité urbaine en offrant une alternative écologique et pratique à la voiture. Avec l'assistance électrique, les trajets quotidiens deviennent plus accessibles, même pour les personnes moins sportives.",
     author: "Équipe Moustache",
     date: "2025-01-15",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80",
     category: "Mobilité urbaine"
   },
   {
@@ -20,7 +20,7 @@ const blogPosts = [
     content: "Un entretien régulier de votre vélo électrique garantit sa longévité et ses performances. Découvrez les gestes essentiels à effectuer régulièrement.",
     author: "Technicien Moustache",
     date: "2025-01-10",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&q=80",
     category: "Entretien"
   },
   {
@@ -30,7 +30,7 @@ const blogPosts = [
     content: "Antibes et ses environs offrent de magnifiques parcours pour les cyclistes. Du Cap d'Antibes aux villages perchés, découvrez nos recommandations.",
     author: "Guide Local",
     date: "2025-01-05",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     category: "Conseils"
   }
 ]
