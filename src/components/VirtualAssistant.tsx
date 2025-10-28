@@ -12,7 +12,6 @@ interface QuickAction {
 
 export default function VirtualAssistant() {
   const [isOpen, setIsOpen] = useState(false)
-  const [showActions, setShowActions] = useState(false)
 
   const quickActions: QuickAction[] = [
     {

@@ -1,11 +1,12 @@
 // src/app/layout.tsx
 import './globals.css'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { CartProvider } from '@/contexts/CartContext'
 import CartButton from '@/components/CartButton'
 import VirtualAssistant from '@/components/VirtualAssistant'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Antibe Cycles AZUR Antibes',
   description: 'Vente, location et atelier de vélos électriques haut de gamme à Antibes',
 }
