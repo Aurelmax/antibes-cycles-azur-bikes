@@ -3,6 +3,7 @@ import './globals.css'
 import Link from 'next/link'
 import { CartProvider } from '@/contexts/CartContext'
 import CartButton from '@/components/CartButton'
+import VirtualAssistant from '@/components/VirtualAssistant'
 
 export const metadata = {
   title: 'Antibe Cycles AZUR Antibes',
@@ -54,6 +55,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-grow container mx-auto p-6">
           {children}
         </main>
+
+      {/* Assistant virtuel */}
+      <VirtualAssistant />
 
       <footer className="bg-primary-black text-white mt-auto border-t border-accent-gold">
         <div className="container mx-auto px-4 py-12">
