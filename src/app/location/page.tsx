@@ -7,7 +7,6 @@ import BookingModal from '@/components/BookingModal';
 
 export default function LocationPage() {
   const [selectedDuration, setSelectedDuration] = useState('day');
-  const [selectedBike, setSelectedBike] = useState('');
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [bookingBike, setBookingBike] = useState('');
 
@@ -188,7 +187,7 @@ export default function LocationPage() {
               <div
                 key={key}
                 onClick={() => setSelectedDuration(key)}
-                className={`relative bg-card-bg border border-border-color rounded-2xl p-8 text-center cursor-pointer transition-all duration-300 transform hover:scale-105 hover-glow {
+                className={`relative bg-card-bg border border-border-color rounded-2xl p-8 text-center cursor-pointer transition-all duration-300 transform hover:scale-105 hover-glow ${
                   selectedDuration === key
                     ? 'ring-4 ring-accent-gold shadow-2xl'
                     : 'hover:shadow-xl'
